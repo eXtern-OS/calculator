@@ -1,0 +1,145 @@
+.calculator {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 10vh;
+}
+
+.containerRow {
+	display: flex;
+	width: 90%;
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.containerRow div {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.containerInputs div input {
+	font-size: 2.5em;
+	width: 96%;
+	height: 80%;
+	caret-color: transparent !important;
+}
+
+.containerInputs div {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 5vh;
+}
+
+#calcOperations {
+	border-bottom: transparent;
+	font-size: smaller;
+	padding-left: 2vw;
+	color: grey;
+	font-weight: bold;
+}
+
+#entry {
+	display: flex;
+	flex-direction: row;
+	width: 96%;
+}
+
+#calcEntry {
+	border-top: transparent;
+	border-left: transparent;
+	height: 100%;
+}
+
+#signCalculation {
+	border-top: transparent;
+	border-right: transparent;
+	height: 100%;
+	width: 5vw;
+}
+
+.containerRow div input:focus {
+	outline: none;
+}
+
+.containerRow div .operations {
+	font-size: 300%;
+	width: 80%;
+	height: 80%;
+	background-color: grey;
+	background: linear-gradient(
+		to right,
+		rgb(230, 230, 230) 0%,
+		rgb(230, 230, 230) 25%,
+		white 50%,
+		white 75%,
+		lightgrey 85%,
+		grey 100%
+	) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background-size: 400% 400% !important;
+	background-repeat: no-repeat !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transition: 0.5s all !important;
+	cursor: pointer;
+	mix-blend-mode: screen;
+	color: black !important;
+}
+
+.containerRow div .mainButtons {
+	font-size: 300%;
+	width: 80%;
+	height: 80%;
+
+	background: linear-gradient(
+		to right,
+		white 0%,
+		white 25%,
+		white 50%,
+		white 75%,
+		lightgrey 85%,
+		grey 100%
+	) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background-size: 400% 400% !important;
+	background-repeat: no-repeat !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transition: 0.5s all !important;
+	cursor: pointer;
+	mix-blend-mode: screen;
+	color: black !important;
+	outline: none !important;
+}
+
+button:focus {
+	outline: none !important;
+}
+
+.containerRow div button:hover {
+	cursor: pointer;
+	background-position: 100% 100% !important;
+}
+
+sup {
+	font-size: 50%;
+	margin-top: -10%;
+}
+
+@media only screen and (max-width: 600px) {
+	.containerRow div .mainButtons,
+	.containerRow div .operations {
+		font-size: 130%;
+	}
+}
