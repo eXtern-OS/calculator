@@ -29,7 +29,7 @@
         
         <section id="main2" class="p-relative" role="main" >
             <!-- Sidebar -->
-            <aside id="sidebar" class="hideBar">
+            <aside id="sidebar" class="hideBar hidden">
                 <!-- Side Menu -->
                 <ul class="list-unstyled side-menu">
                     <li class="dropdown">
@@ -51,12 +51,12 @@
                 </ul>
             </aside>
             
-            <section id="content">
+            <section id="content" style="margin-left: 0;">
             <!-- Your App contents here -->
-            
+            <div class="col-md-12">
             <div class="calculator">
                 <div class="containerRow containerInputs">
-                    <div>
+                    <div id="outputContainer">
                         <input id="calcOperations" type="text" >
                         <div id="entry">
                             <input id="signCalculation" type="text">
@@ -166,6 +166,7 @@
                         <button class="btn btn-alt m-r-5 operations" onclick="nextNumber('-')"> - </button>
                     </div>
                 </div>
+            </div>
             </div>
 	    </section>
         

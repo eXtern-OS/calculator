@@ -1,4 +1,7 @@
-//Your code here
+var win = nw.Window.get();
+
+//win.showDevTools();
+
 var index = 0;
 var numbers = [new Big(0)];
 var normalNumber = true;
