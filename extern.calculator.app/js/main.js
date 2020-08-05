@@ -1,11 +1,23 @@
 var win = nw.Window.get();
+win.width = 670;
 
 //win.showDevTools();
+
+var e = nerdamer('x^2+2*(cos(x)+x*x)');
+
+    console.log(e.text());
+
 
 var index = 0;
 var numbers = [new Big(0)];
 var normalNumber = true;
 var firstNumber = true;
+
+function openAdvancedMode() {
+	$("#simpleMath").addClass("hidden");
+	$("#advancedMath").removeClass("hidden");
+
+}
 
 $(document).ready(() => {
 	$(document).on("keydown", (e) => {

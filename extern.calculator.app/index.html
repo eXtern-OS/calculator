@@ -53,7 +53,8 @@
             
             <section id="content" style="margin-left: 0;">
             <!-- Your App contents here -->
-            <div class="col-md-12">
+             
+            <div id="simpleMath" class="col-md-12">
             <div class="calculator">
                 <div class="containerRow containerInputs">
                     <div id="outputContainer">
@@ -64,6 +65,9 @@
                         </div>
                     </div>
                 </div>
+                 <div class="containerRow" style="height: fit-content;"> 
+                     <button class="btn btn-alt m-r-5" onclick="openAdvancedMode()" style="font-size: 150%; margin-bottom: 20px;"> <span class="icon">&#61796;</span> Advanced Mode </button>
+                 </div>
                 <div class="containerRow"> 
                     <div>
                         <button class="btn btn-alt m-r-5 operations"> x<sup>2</sup> </button>
@@ -168,6 +172,23 @@
                 </div>
             </div>
             </div>
+            <div id="advancedMath" class="col-md-12 hidden">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3" style="margin-top: 50px;">
+                        <input type="text" class="form-control input-lg" style="text-align: center; margin-bottom: 30px;" placeholder="Type an expression to begin">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="tips">
+                        <h2> Tips here </h2>
+                    </div>
+                    <div id="advancedCalcOut" class="hidden">
+
+                    </div>
+                </div>
+            </div>
+
 	    </section>
         
         <!-- Javascript Libraries -->
@@ -178,55 +199,16 @@
         
         <!-- Bootstrap -->
         <script src="../../Shared/CoreJS/bootstrap.min.js"></script>
-        <script src="../../Shared/CoreJS/jQuery.twFile.js"></script>    
 
-            
-        <script src="../../Shared/CoreJS/sparkline.min.js"></script> <!-- Sparkline - Tiny charts -->
-        <script src="../../Shared/CoreJS/easypiechart.js"></script> <!-- EasyPieChart - Animated Pie Charts -->
-        <script src="../../Shared/CoreJS/charts.js"></script> <!-- All the above chart related functions -->
-            
-        <!-- Map -->
-        <script src="../../Shared/CoreJS/maps/jvectormap.min.js"></script> <!-- jVectorMap main library -->
-        <script src="../../Shared/CoreJS/maps/au.js"></script> <!-- Australia Map for jVectorMap -->
-        
-        <!-- UX -->
-        <script src="../../Shared/CoreJS/scroll.min.js"></script> <!-- Custom Scrollbar -->
-        
-        <!-- Other -->
-        <script src="../../Shared/CoreJS/calendar.min.js"></script> <!-- Calendar -->
-        <script src="../../Shared/CoreJS/feeds.min.js"></script> <!-- News Feeds -->
-            
-         <!--  Form Related -->
-        <script src="../../Shared/CoreJS/icheck.js"></script> <!-- Custom Checkbox + Radio -->
-         <script src="../../Shared/CoreJS/select.min.js"></script> <!-- Custom Select -->
-        <script src="../../Shared/CoreJS/chosen.min.js"></script> <!-- Custom Multi Select -->
-        <script src="../../Shared/CoreJS/datetimepicker.min.js"></script> <!-- Date & Time Picker -->
-        <script src="../../Shared/CoreJS/colorpicker.min.js"></script> <!-- Color Picker -->
-        <script src="../../Shared/CoreJS/icheck.js"></script> <!-- Custom Checkbox + Radio -->
-        <script src="../../Shared/CoreJS/autosize.min.js"></script> <!-- Textare autosize -->
-        <script src="../../Shared/CoreJS/toggler.min.js"></script> <!-- Toggler -->
-        <script src="../../Shared/CoreJS/input-mask.min.js"></script> <!-- Input Mask -->
-        <script src="../../Shared/CoreJS/spinner.min.js"></script> <!-- Spinner -->
-        <script src="../../Shared/CoreJS/slider.min.js"></script> <!-- Input Slider -->
-        <script src="../../Shared/CoreJS/fileupload.min.js"></script> <!-- File Upload -->
-        
-        <!-- Text Editor -->
-        <script src="../../Shared/CoreJS/editor.min.js"></script> <!-- WYSIWYG Editor -->
-        <script src="../../Shared/CoreJS/markdown.min.js"></script> <!-- Markdown Editor -->
-        
-        <!-- All JS functions -->
-        <script src="../../Shared/CoreJS/functions.js"></script>
-            <script src="../../slick.js"></script>
-            <script type="text/javascript" src="../../Shared/CoreJS/canvas_blur_rect.js"></script>
-            <script src="../../Shared/CoreJS/jquery.zoomooz.min.js"></script>
-
-        </div>
-
-        <!-- for testing -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         
         <!-- development -->
         <script src="./Libraries/big.js-master/big.js"></script>
+<script src="js/nerdamer.core.js"></script> <!-- assuming you've saved the file in the root of course -->
+<!-- LOAD ADD-ONS -->
+<script src="js/Algebra.js"></script>
+<script src="js/Calculus.js"></script>
+<script src="js/Solve.js"></script>
+<script src="js/Extra.js"></script> <!-- again assuming you've saved the files in root -->
         <script src="./js/main.js"></script>
         
     </body>
