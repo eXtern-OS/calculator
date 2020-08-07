@@ -145,7 +145,7 @@ function getInputResults(input) {
 					if (solutions.length > 0) {
 						zeros +='<h3 class="block-title">Zeros</h3>';
 						for (var i = 0; i < solutions.length; i++) {
-							zeros += '<p> `x_'+(i+1)+' = '+solutions[i]+'` </p>';
+							zeros += '<p> `'+variableToMonitor+'_'+(i+1)+' = '+solutions[i]+'` </p>';
 						}
 					}
 					
