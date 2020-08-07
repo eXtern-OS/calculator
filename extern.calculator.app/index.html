@@ -175,16 +175,20 @@
             <div id="advancedMath" class="col-md-12 hidden">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3" style="margin-top: 50px;">
-                        <input type="text" class="form-control input-lg" style="text-align: center; margin-bottom: 30px;" placeholder="Type an expression to begin">
+                        <input id="advancedCalcsInput" type="text" class="form-control input-lg" style="text-align: center; margin-bottom: 30px;" placeholder="Type an expression to begin">
                     </div>
                 </div>
 
                 <div class="row">
                     <div id="tips">
-                        <h2> Tips here </h2>
+                        <h2> f(x)=x^4-2x^3 </h2>
+                        
                     </div>
                     <div id="advancedCalcOut" class="hidden">
-
+                        <div id="dynamicOutput"></div>
+                        
+                        <div id="lols"></div>
+                        <div id="graphOutput" class="hidden"></div>
                     </div>
                 </div>
             </div>
@@ -203,13 +207,18 @@
         
         <!-- development -->
         <script src="./Libraries/big.js-master/big.js"></script>
-<script src="js/nerdamer.core.js"></script> <!-- assuming you've saved the file in the root of course -->
+<script src="js/nerdamer.core.js"></script> 
 <!-- LOAD ADD-ONS -->
 <script src="js/Algebra.js"></script>
 <script src="js/Calculus.js"></script>
 <script src="js/Solve.js"></script>
-<script src="js/Extra.js"></script> <!-- again assuming you've saved the files in root -->
+<script src="js/Extra.js"></script>
+
         <script src="./js/main.js"></script>
+        <!--<script src="js/mathjax.js"></script>-->
+        <script async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML-full">
+	</script>
         
     </body>
 
