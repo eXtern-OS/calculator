@@ -1,7 +1,7 @@
 var win = nw.Window.get();
 win.width = 670;
 
-win.showDevTools();
+//win.showDevTools();
 
 		/*window.MathJax = {
 				"fast-preview": {
