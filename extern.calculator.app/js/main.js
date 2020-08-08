@@ -162,11 +162,26 @@ function getInputResults(input) {
 						$("#tips").addClass("hidden");
 						$("#advancedCalcOut").removeClass("hidden");
 					}
+					var instance = functionPlot({
+						target: '#graphOutput',
+						
+						color: 'pink',
+						data: [{
+							fn: equation
+							}]
+					});
+					$("#graphOutput").removeClass("hidden");
+					for (var i = 0; i < functionPlot.globals.COLORS.length; i++)
+						functionPlot.globals.COLORS[i] = d3.hsl('white')
+
+					console.log(functionPlot.globals.COLORS)
+					instance.draw()
 				} catch (e) {
 					$("#advancedCalcOut").addClass("hidden");
 					$("#tips").removeClass("hidden");
 				}
 				window.MathJax.Hub.Typeset();
+				
 				
 			} else {
 				console.log("not fx yet")

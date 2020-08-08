@@ -13,10 +13,32 @@
     font-size: 2.5em;
 }
 
+.origin {
+    stroke: white;
+}
+
+#advancedMainView {
+    overflow-y: scroll;
+    height: calc(100% - 126px);
+    padding-bottom: 40px;
+}
+
 .block-title {
     margin-bottom: 10px;
     margin-top: 20px;
     font-size: 18px;
+}
+
+#graphOutput {
+    text-align: center;
+}
+
+path.domain{
+  stroke: white;
+}
+
+g.axis{
+  stroke: white;
 }
 
 .containerRow {
