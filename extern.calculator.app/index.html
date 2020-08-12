@@ -183,13 +183,30 @@
             <div id="advancedMath" class="col-md-12">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3" style="margin-top: 50px;">
-                        <input id="advancedCalcsInput" type="text" class="form-control input-lg" style="text-align: center; margin-bottom: 30px;" placeholder="Type an expression to begin">
+                        <input id="advancedCalcsInput" type="text" class="form-control input-lg" style="text-align: center; margin-bottom: 30px;" placeholder="Enter a mathematical expression to begin">
                     </div>
                 </div>
 
                 <div id="advancedMainView" class="row">
                     <div id="tips">
-                        <h2> f(x)=x^4-2x^3 </h2>
+                        <p> Enter an equation such as: </p>
+                        <a href="#" onclick="enterCustomExpression(&quot;x^2+3x=10&quot;)"> `x^2+3x=10` </a> or <a href="#" onclick="enterCustomExpression(&quot;x^4-10=20-x^2&quot;)"> `x^4-10=20-x^2` </a> or <a href="#" onclick="enterCustomExpression(&quot;x^2*sin(x)=4&quot;)"> `x^2*sin(x)=4` </a>
+                         <p> Enter a function with f(x) such as: </p>
+                        <a href="#" onclick="enterCustomExpression(&quot;f(x)=x^4-2x^3&quot;)"> `f(x)=x^4-2x^3` </a> or <a href="#" onclick="enterCustomExpression(&quot;f(t)=t^5+3t^4&quot;)"> `f(t)=t^5+3t^4` </a>
+                        
+                        <div class="row">
+                            <h3 class="block-title">Calculation Options</h3>
+                            <div class="row">
+                                <a href="#" class="btn btn-alt calc-option"> <span class="icon">&#61877;</span> <br> Basics </a>
+                                <a href="#" class="btn btn-alt calc-option"> <span class="icon">&#61877;</span> <br> Trigonometry </a>
+                                <a href="#" class="btn btn-alt calc-option"> <span class="icon">&#61877;</span> <br> Imaginary Numbers </a>
+                                <a href="#" class="btn btn-alt calc-option"> <span class="icon">&#61877;</span> <br> Calculus </a>
+                                <a href="#" class="btn btn-alt calc-option"> <span class="icon">&#61877;</span> <br> Linear Algebra</a>
+                                <a href="#" class="btn btn-alt calc-option"> <span class="icon">&#61877;</span> <br> Other </a>
+                            </div>
+                            
+                        </div>
+                        
                         
                     </div>
                     <div id="advancedCalcOut" class="hidden">

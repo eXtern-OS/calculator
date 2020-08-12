@@ -1,7 +1,7 @@
 var win = nw.Window.get();
 win.width = 670;
 
-//win.showDevTools();
+win.showDevTools();
 
 		/*window.MathJax = {
 				"fast-preview": {
@@ -50,6 +50,10 @@ $(document).ready(() => {
 		if (e.keyCode == 46) clearEntry();
 	});
 });
+
+setTimeout(function(){
+		$("#tips").addClass("font-size-fix");
+		}, 2000);
 
 function addNumber(number) {
 	if (!normalNumber) numbers[index] = new Big(0);
@@ -140,7 +144,7 @@ function getInputResults(input) {
 					var def3 = nerdamer('diff('+equation+', '+variableToMonitor+', 3)');
 					var solutions = nerdamer(equation).solveFor(variableToMonitor).toString().split(",");
 					console.log("def1: ",def1);
-					//console.log("zeros: ",solutions);
+					console.log("zeros: ",solutions);
 					var zeros = '';
 					if (solutions.length > 0) {
 						zeros +='<h3 class="block-title">Zeros</h3>';
@@ -148,6 +152,8 @@ function getInputResults(input) {
 							zeros += '<p> `'+variableToMonitor+'_'+(i+1)+' = '+solutions[i]+'` </p>';
 						}
 					}
+
+					console.log("gets here:")
 					
 				$("#dynamicOutput").empty();
 					$("#dynamicOutput").append('<h1> `'+input+'` </h1>'+
@@ -162,21 +168,28 @@ function getInputResults(input) {
 						$("#tips").addClass("hidden");
 						$("#advancedCalcOut").removeClass("hidden");
 					}
+
+					var equationModified = equation.replace(new RegExp(variableToMonitor, 'g'),"x"); //FIXME: alternative solution is preffered
+					
+					console.log("equationModified: ",equationModified);
 					var instance = functionPlot({
 						target: '#graphOutput',
 						
 						color: 'pink',
 						data: [{
-							fn: equation
+							fn: equationModified
 							}]
 					});
 					$("#graphOutput").removeClass("hidden");
 					for (var i = 0; i < functionPlot.globals.COLORS.length; i++)
 						functionPlot.globals.COLORS[i] = d3.hsl('white')
 
+						
+
 					console.log(functionPlot.globals.COLORS)
 					instance.draw()
 				} catch (e) {
+					console.log("error: ",e),
 					$("#advancedCalcOut").addClass("hidden");
 					$("#tips").removeClass("hidden");
 				}
@@ -198,6 +211,13 @@ var oldInput = "";
 
 $('#advancedCalcsInput').change(function(){
 		console.log("input changed");
+		if (oldInput != $("#advancedCalcsInput").val())
+				  	if ($("#advancedCalcsInput").val() == "") {
+						$("#advancedCalcOut").addClass("hidden");
+						$("#tips").removeClass("hidden");
+					  } else {
+						  getInputResults($("#advancedCalcsInput").val());
+					  }
 	});
 
 		  	$("#advancedCalcsInput").keyup(function (e) {
@@ -205,12 +225,22 @@ $('#advancedCalcsInput').change(function(){
 				  
 				  //console.log(x.toString());
 				  if (oldInput != $("#advancedCalcsInput").val())
-				  	getInputResults($("#advancedCalcsInput").val());
+				  	if ($("#advancedCalcsInput").val() == "") {
+						$("#advancedCalcOut").addClass("hidden");
+						$("#tips").removeClass("hidden");
+					  } else {
+						  getInputResults($("#advancedCalcsInput").val());
+					  }
+					  	
 				
-				oldInput = $("#advancedCalcsInput").val()
+				oldInput = $("#advancedCalcsInput").val();
 
 			if (e.keyCode == 13) { //Press ENTER
 
 				//enter pressed
 			}
 		});
+
+	function enterCustomExpression(expression) {
+		$("#advancedCalcsInput").val(expression).change();
+	}

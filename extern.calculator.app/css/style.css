@@ -29,8 +29,31 @@
     font-size: 18px;
 }
 
+#tips {
+    text-align: center;
+}
+
+.font-size-fix {
+    font-size: 20px;
+}
+
+.calc-option {
+    font-size: 20px;
+    margin-right: 5px;
+    width: 203px;
+    margin-top: 10px;
+}
+
 #graphOutput {
     text-align: center;
+}
+
+.row {
+    margin: 0;
+}
+
+.calc-option > .icon {
+    font-size: 50px;
 }
 
 path.domain{
